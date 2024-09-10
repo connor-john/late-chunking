@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "late-chunking"
+version = "0.1.0"
+description = ""
+authors = ["Connor (Cub) <connor@cubdigital.co.nz>"]
+readme = "README.md"
+packages = [{ include = "late-chunking" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+transformers = "^4.44.2"
+torch = {version = "^2.4.1+cpu", source = "pytorch_cpu"}
+torchvision = {version = "^0.19.1+cpu", source = "pytorch_cpu"}
+
+
+[[tool.poetry.source]]
+name = "pytorch_cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+test = "late-chunking.run:main"
